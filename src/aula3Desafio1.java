@@ -14,7 +14,7 @@ public class aula3Desafio1 {
             if (valor < 1){
                 System.out.println("digite uma quantidade a partir de 1");
             }
-            if (ehPrimo(numeroContador)) {
+            else if (ehPrimo(numeroContador)) {
                 System.out.println(numeroContador);
                 primos++;
                 numeroContador++;
