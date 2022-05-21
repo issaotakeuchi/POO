@@ -8,22 +8,20 @@ public class aula3Desafio1 {
         int valor = scanner.nextInt();
 
         int primos = 0;
-        int naoPrimos = 0;
-        int todosOsNumeros = 0;
+        int numeroContador = 2;
 
-        for (int numeroContador = 2; (todosOsNumeros - naoPrimos) < valor; numeroContador++){
+        do {
+            if (valor < 1){
+                System.out.println("digite uma quantidade a partir de 1");
+            }
             if (ehPrimo(numeroContador)) {
                 System.out.println(numeroContador);
                 primos++;
-                naoPrimos = naoPrimos;
-                todosOsNumeros = primos + naoPrimos;
+                numeroContador++;
             } else {
-                naoPrimos++;
-                primos = primos;
-                todosOsNumeros = primos + naoPrimos;
+                numeroContador++;
             }
-        }
-
+        } while (primos < valor);
     }
 
     private static boolean ehPrimo (int valor) {
@@ -38,7 +36,3 @@ public class aula3Desafio1 {
     }
 
 }
-
-
-
-
