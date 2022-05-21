@@ -3,32 +3,42 @@ import java.util.Scanner;
 public class aula3Desafio1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("informar a quantidade de numeros primos que deseja visualizar (de forma crescente): ");
+
+        System.out.println("digite quantos números primos deseja visualizar (em ordem crescente): ");
         int valor = scanner.nextInt();
 
-        for (int i = 1; i <= valor; i++){
-       //     for (int primos = 0; primos = valor; primos++){
-                if (ehPrimo(valor)){
-                    System.out.println(valor);
-                }
+        int primos = 0;
+        int naoPrimos = 0;
+        int todosOsNumeros = 0;
+
+        for (int numeroContador = 2; (todosOsNumeros - naoPrimos) < valor; numeroContador++){
+            if (ehPrimo(numeroContador)) {
+                System.out.println(numeroContador);
+                primos++;
+                naoPrimos = naoPrimos;
+                todosOsNumeros = primos + naoPrimos;
+            } else {
+                naoPrimos++;
+                primos = primos;
+                todosOsNumeros = primos + naoPrimos;
             }
         }
 
-    //}
+    }
 
-    private static boolean ehPrimo(int valor) {
+    private static boolean ehPrimo (int valor) {
         boolean primo = true;
-        for (int i=2; i<valor; i++) {
+        for (int i = 2; i<valor; i++) {
             if (valor % i == 0) {
                 primo = false;
                 break;
             }
-
         }
         return primo;
-
-
     }
 
 }
+
+
+
 
